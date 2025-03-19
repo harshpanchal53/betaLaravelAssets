@@ -1,0 +1,8 @@
+async function checkServerStatus(ip, port) {
+    const response = await fetch(`https://yourfreehost.com/server-check.php?ip=${ip}&port=${port}`);
+    const data = await response.json();
+    document.getElementById("status").innerText = `Server is ${data.status}`;
+}
+
+// Example Usage
+checkServerStatus("8.8.8.8", 80);
